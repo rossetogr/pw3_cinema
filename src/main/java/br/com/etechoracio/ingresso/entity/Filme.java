@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.Duration;
+import java.util.List;
 
 @Getter
 @Setter
@@ -55,5 +56,8 @@ public class Filme {
     @Enumerated(EnumType.STRING)
     @Column(name = "CHK_EM_CARTAZ")
     private SimNaoEnum emCartaz;
+
+    @OneToMany(mappedBy = "filme")
+    private List<Sessao> sessoes;
 
 }
